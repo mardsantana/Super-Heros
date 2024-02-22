@@ -46,4 +46,12 @@ public class HerosServiceImpl implements HerosService{
         herosRepository.deleteHero(herosModel);
         log.info("[finish] HerosServiceImpl - deleteHerosById");
     }
+    @Override
+    public void updateHeroById(UUID idHeros, HerosDTO herosDTO) {
+        log.info("[start] HerosServiceImpl - updateHeroById");
+        HerosModel herosModel = herosRepository.getHerosById(idHeros);
+        herosModel.update(herosDTO);
+        herosRepository.save(herosModel);
+        log.info("[finish] HerosServiceImpl - updateHeroById");
+    }
 }

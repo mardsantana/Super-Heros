@@ -32,4 +32,11 @@ public class HerosModel {
         this.descriptionOfPower = herosDTO.getDescriptionOfPower();
         this.weakness = herosDTO.getWeakness();
     }
+
+    public void update(HerosDTO herosDTO) {
+        this.name = herosDTO.getName();
+        this.powerOfTheHeros = herosDTO.getPowerOfTheHeros();
+        this.descriptionOfPower = herosDTO.getDescriptionOfPower();
+        this.weakness = herosDTO.getWeakness();
+    }
 }

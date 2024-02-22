@@ -53,6 +53,13 @@ public class HerosController {
         herosService.deleteHerosById(idHeros);
         log.info("[finish] HerosController - deleteById");
     }
-
+    @PutMapping(value = "/{idHeros}")
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    void updateHeroById(@PathVariable UUID idHeros, @Valid @RequestBody HerosDTO herosDTO){
+        log.info("[start] HerosController - updateHeroById");
+        log.info("[idHeros] {}", idHeros);
+        herosService.updateHeroById(idHeros, herosDTO);
+        log.info("[finish] HerosController - updateHeroById");
+    }
 
 }

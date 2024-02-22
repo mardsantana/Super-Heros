@@ -1,6 +1,7 @@
 package br.com.superheros.superhiros.model;
 
 
+import br.com.superheros.superhiros.dto.HerosDTO;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
@@ -22,6 +23,13 @@ public class HerosModel {
     private String name;
     private String powerOfTheHeros;
     private String descriptionOfPower;
+    private String weakness;
     private LocalDateTime hourOfRegister;
 
+    public HerosModel(HerosDTO herosDTO) {
+        this.name = herosDTO.getName();
+        this.powerOfTheHeros = herosDTO.getPowerOfTheHeros();
+        this.descriptionOfPower = herosDTO.getDescriptionOfPower();
+        this.hourOfRegister = herosDTO.getHourOfRegister();
+    }
 }

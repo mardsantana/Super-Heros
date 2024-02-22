@@ -19,4 +19,6 @@ public class HerosDTO {
     private String descriptionOfPower;
     @Column(table = "hour_of_register")
     private LocalDateTime hourOfRegister;
+    @NotBlank
+    private String weakness;
 }

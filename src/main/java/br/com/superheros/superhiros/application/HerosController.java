@@ -45,5 +45,14 @@ public class HerosController {
         log.info("[finish] HerosController - getGenerateHeros");
         return heros;
     }
+    @DeleteMapping(value = "/{idHeros}")
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    void deleteById(@PathVariable UUID idHeros){
+        log.info("[start] HerosController - deleteById");
+        log.info("[idHeros] {}", idHeros);
+        herosService.deleteHerosById(idHeros);
+        log.info("[finish] HerosController - deleteById");
+    }
+
 
 }

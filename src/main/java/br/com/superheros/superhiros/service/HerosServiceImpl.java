@@ -39,4 +39,11 @@ public class HerosServiceImpl implements HerosService{
         log.info("[finish] HerosServiceImpl - getAll");
         return HerosListDTO.Converte(herosModels);
     }
+    @Override
+    public void deleteHerosById(UUID idHeros) {
+        log.info("[start] HerosServiceImpl - deleteHerosById");
+        HerosModel herosModel = herosRepository.getHerosById(idHeros);
+        herosRepository.deleteHero(herosModel);
+        log.info("[finish] HerosServiceImpl - deleteHerosById");
+    }
 }

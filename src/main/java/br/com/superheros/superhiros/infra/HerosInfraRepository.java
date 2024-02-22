@@ -37,4 +37,10 @@ public class HerosInfraRepository implements HerosRepository {
         log.info("[finish] HerosInfraRepository - getAll");
         return generateHeros;
     }
+    @Override
+    public void deleteHero(HerosModel herosModel) {
+        log.info("[start] HerosInfraRepository - deleteHero");
+        herosSpringDataJPARepository.delete(herosModel);
+        log.info("[finish] HerosInfraRepository - deleteHero");
+    }
 }

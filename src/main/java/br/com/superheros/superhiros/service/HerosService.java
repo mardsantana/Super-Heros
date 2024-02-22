@@ -14,4 +14,5 @@ public interface HerosService {
     HerosResponse createHero(HerosDTO herosDTO);
     HerosDetailResponse getHerosById(UUID idHeros);
     List<HerosListDTO> getAll();
+    void deleteHerosById(UUID idHeros);
 }

@@ -9,4 +9,5 @@ public interface HerosRepository {
     HerosModel save(HerosModel herosModel);
     HerosModel getHerosById(UUID idHeros);
     List<HerosModel> getAll();
+    void deleteHero(HerosModel herosModel);
 }

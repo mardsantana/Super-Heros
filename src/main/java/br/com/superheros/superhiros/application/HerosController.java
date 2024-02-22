@@ -9,6 +9,9 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.UUID;
+
 @RestController
 @Log4j2
 @RequestMapping("/heros")
@@ -24,6 +27,23 @@ public class HerosController {
         HerosResponse herosCreate = herosService.createHero(herosDTO);
         log.info("[finish] HerosController - createHero");
         return herosCreate;
+    }
+    @GetMapping(value = "/{idHeros}")
+    @ResponseStatus(code = HttpStatus.OK)
+    HerosDetailResponse getHerosById(@PathVariable UUID idHeros){
+        log.info("[start] HerosController - getHerosById");
+        log.info("[idHeros] {}", idHeros);
+        HerosDetailResponse herosDetail = herosService.getHerosById(idHeros);
+        log.info("[finish] HerosController - getHerosById");
+        return herosDetail;
+    }
+    @GetMapping
+    @ResponseStatus(code = HttpStatus.OK)
+    List<HerosListDTO> getGenerateHeros(){
+        log.info("[start] HerosController - getGenerateHeros");
+        List<HerosListDTO> heros = herosService.getAll();
+        log.info("[finish] HerosController - getGenerateHeros");
+        return heros;
     }
 
 }

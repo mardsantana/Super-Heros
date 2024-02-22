@@ -30,6 +30,6 @@ public class HerosModel {
         this.name = herosDTO.getName();
         this.powerOfTheHeros = herosDTO.getPowerOfTheHeros();
         this.descriptionOfPower = herosDTO.getDescriptionOfPower();
-        this.hourOfRegister = herosDTO.getHourOfRegister();
+        this.weakness = herosDTO.getWeakness();
     }
 }

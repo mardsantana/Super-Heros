@@ -1,0 +1,21 @@
+package br.com.superheros.superhiros.powers.infra;
+
+import br.com.superheros.superhiros.powers.model.PowerModel;
+import br.com.superheros.superhiros.powers.repository.PowerRepository;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.log4j.Log4j2;
+import org.springframework.stereotype.Repository;
+
+@Repository
+@Log4j2
+@RequiredArgsConstructor
+public class PowerInfraRepository implements PowerRepository {
+    private final PowerSpringDataJPARepository powerSpringDataJPARepository;
+    @Override
+    public PowerModel savePower(PowerModel powerModel) {
+        log.info("[start] PowerInfraRepository - savePower");
+        powerSpringDataJPARepository.save(powerModel);
+        log.info("[finish] PowerInfraRepository - savePower");
+        return powerModel;
+    }
+}

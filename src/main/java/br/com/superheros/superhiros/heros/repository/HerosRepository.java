@@ -1,6 +1,6 @@
-package br.com.superheros.superhiros.repository;
+package br.com.superheros.superhiros.heros.repository;
 
-import br.com.superheros.superhiros.model.HerosModel;
+import br.com.superheros.superhiros.heros.model.HerosModel;
 
 import java.util.List;
 import java.util.UUID;

@@ -1,6 +1,6 @@
-package br.com.superheros.superhiros.application;
+package br.com.superheros.superhiros.heros.application;
 
-import br.com.superheros.superhiros.model.HerosModel;
+import br.com.superheros.superhiros.heros.model.HerosModel;
 import lombok.Getter;
 import lombok.ToString;
 

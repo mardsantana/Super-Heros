@@ -1,10 +1,9 @@
-package br.com.superheros.superhiros.infra;
+package br.com.superheros.superhiros.heros.infra;
 
-import br.com.superheros.superhiros.model.HerosModel;
-import br.com.superheros.superhiros.repository.HerosRepository;
+import br.com.superheros.superhiros.heros.model.HerosModel;
+import br.com.superheros.superhiros.heros.repository.HerosRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

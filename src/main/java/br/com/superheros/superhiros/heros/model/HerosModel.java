@@ -1,9 +1,8 @@
-package br.com.superheros.superhiros.model;
+package br.com.superheros.superhiros.heros.model;
 
 
-import br.com.superheros.superhiros.dto.HerosDTO;
+import br.com.superheros.superhiros.heros.dto.HerosDTO;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -22,21 +21,15 @@ public class HerosModel {
     private UUID idHeros;
     private String name;
     private String powerOfTheHeros;
-    private String descriptionOfPower;
-    private String weakness;
     private LocalDateTime hourOfRegister;
 
     public HerosModel(HerosDTO herosDTO) {
         this.name = herosDTO.getName();
         this.powerOfTheHeros = herosDTO.getPowerOfTheHeros();
-        this.descriptionOfPower = herosDTO.getDescriptionOfPower();
-        this.weakness = herosDTO.getWeakness();
     }
 
     public void update(HerosDTO herosDTO) {
         this.name = herosDTO.getName();
         this.powerOfTheHeros = herosDTO.getPowerOfTheHeros();
-        this.descriptionOfPower = herosDTO.getDescriptionOfPower();
-        this.weakness = herosDTO.getWeakness();
     }
 }

@@ -1,8 +1,7 @@
-package br.com.superheros.superhiros.application;
+package br.com.superheros.superhiros.heros.application;
 
-import br.com.superheros.superhiros.dto.HerosDTO;
-import br.com.superheros.superhiros.model.HerosModel;
-import br.com.superheros.superhiros.service.HerosService;
+import br.com.superheros.superhiros.heros.dto.HerosDTO;
+import br.com.superheros.superhiros.heros.service.HerosService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;

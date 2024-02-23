@@ -1,11 +1,11 @@
-package br.com.superheros.superhiros.service;
+package br.com.superheros.superhiros.heros.service;
 
-import br.com.superheros.superhiros.application.HerosDetailResponse;
-import br.com.superheros.superhiros.application.HerosListDTO;
-import br.com.superheros.superhiros.application.HerosResponse;
-import br.com.superheros.superhiros.dto.HerosDTO;
-import br.com.superheros.superhiros.model.HerosModel;
-import br.com.superheros.superhiros.repository.HerosRepository;
+import br.com.superheros.superhiros.heros.application.HerosDetailResponse;
+import br.com.superheros.superhiros.heros.application.HerosListDTO;
+import br.com.superheros.superhiros.heros.application.HerosResponse;
+import br.com.superheros.superhiros.heros.dto.HerosDTO;
+import br.com.superheros.superhiros.heros.model.HerosModel;
+import br.com.superheros.superhiros.heros.repository.HerosRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;

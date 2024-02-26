@@ -1,6 +1,7 @@
 package br.com.superheros.superhiros.powers.model;
 
 import br.com.superheros.superhiros.heros.model.HerosModel;
+import br.com.superheros.superhiros.powers.application.PowerUpDate;
 import br.com.superheros.superhiros.powers.dto.PowerDTO;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -45,5 +46,10 @@ public class PowerModel {
         this.idHeros = powerModel.getIdHeros();
         this.descriptionOfPower = powerModel.getDescriptionOfPower();
         this.weakness = powerModel.getWeakness();
+    }
+
+    public void upDate(PowerUpDate powerUpDate) {
+        this.descriptionOfPower = powerUpDate.getDescriptionOfPower();
+        this.weakness = powerUpDate.getWeakness();
     }
 }

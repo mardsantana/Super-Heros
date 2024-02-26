@@ -43,5 +43,13 @@ public class PowerController {
         powerService.deletePowerById(idHeros, idPower);
         log.info("[finish] PowerController - deletePowerById");
     }
+    @PutMapping(value = "/{idPower}")
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    void updatePower(@PathVariable UUID idPower, @Valid @RequestBody PowerUpDate powerUpDate){
+        log.info("[start] PowerController - updatePower");
+        log.info("[idPower] {}", idPower);
+        powerService.upDatePowerById(idPower, powerUpDate);
+        log.info("[finish] PowerController - updatePower");
+    }
 
 }

@@ -20,7 +20,6 @@ public class PowerInfraRepository implements PowerRepository {
         log.info("[finish] PowerInfraRepository - savePower");
         return powerModel;
     }
-
     @Override
     public PowerModel getPowerById(UUID idPower) {
         log.info("[start] PowerInfraRepository - getPowerById");

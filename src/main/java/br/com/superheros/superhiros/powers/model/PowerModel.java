@@ -1,11 +1,14 @@
 package br.com.superheros.superhiros.powers.model;
 
+import br.com.superheros.superhiros.heros.model.HerosModel;
 import br.com.superheros.superhiros.powers.dto.PowerDTO;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 @Entity
@@ -25,10 +28,22 @@ public class PowerModel {
     private String descriptionOfPower;
     private String weakness;
     private LocalDateTime hourOfRegister;
+    @ManyToOne
+    private HerosModel hero;
+
+
+    public PowerModel() {
+    }
 
     public PowerModel(UUID idHeros, PowerDTO powerDTO) {
         this.idHeros = idHeros;
         this.descriptionOfPower = powerDTO.getDescriptionOfPower();
         this.weakness = powerDTO.getWeakness();
+    }
+
+    public PowerModel(PowerModel powerModel) {
+        this.idHeros = powerModel.getIdHeros();
+        this.descriptionOfPower = powerModel.getDescriptionOfPower();
+        this.weakness = powerModel.getWeakness();
     }
 }

@@ -1,6 +1,6 @@
 package br.com.superheros.superhiros.heros.dto;
 
-import jakarta.persistence.Column;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 

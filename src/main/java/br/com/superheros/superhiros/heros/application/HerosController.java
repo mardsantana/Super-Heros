@@ -38,9 +38,9 @@ public class HerosController {
     }
     @GetMapping
     @ResponseStatus(code = HttpStatus.OK)
-    List<HerosListDTO> getGenerateHeros(){
+    List<HerosListResponse> getGenerateHeros(){
         log.info("[start] HerosController - getGenerateHeros");
-        List<HerosListDTO> heros = herosService.getAll();
+        List<HerosListResponse> heros = herosService.getAll();
         log.info("[finish] HerosController - getGenerateHeros");
         return heros;
     }

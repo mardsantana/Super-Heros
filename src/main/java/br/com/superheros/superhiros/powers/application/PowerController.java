@@ -26,4 +26,14 @@ public class PowerController {
         log.info("[finish] PowerController - createPower");
         return powerCreate;
     }
+    @GetMapping(value = "/{idPower}")
+    @ResponseStatus(code = HttpStatus.OK)
+    PowerDetailResponse getPowerById(@PathVariable UUID idPower){
+        log.info("[start] PowerController - getPowerById");
+        log.info("[idPower] {}", idPower);
+        PowerDetailResponse powerStatus = powerService.getPowerById(idPower);
+        log.info("[finish] PowerController - getPowerById");
+        return powerStatus;
+    }
+
 }

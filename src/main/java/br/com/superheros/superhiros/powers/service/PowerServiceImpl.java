@@ -1,6 +1,7 @@
 package br.com.superheros.superhiros.powers.service;
 
 import br.com.superheros.superhiros.heros.service.HerosService;
+import br.com.superheros.superhiros.powers.application.PowerDetailResponse;
 import br.com.superheros.superhiros.powers.application.PowerResponse;
 import br.com.superheros.superhiros.powers.dto.PowerDTO;
 import br.com.superheros.superhiros.powers.model.PowerModel;
@@ -9,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -17,6 +19,7 @@ import java.util.UUID;
 public class PowerServiceImpl implements PowerService{
     private final PowerRepository powerRepository;
     private final HerosService herosService;
+
     @Override
     public PowerResponse createPower(UUID idHeros, PowerDTO powerDTO) {
         log.info("[start] PowerServiceImpl - createPower");
@@ -25,4 +28,11 @@ public class PowerServiceImpl implements PowerService{
         log.info("[finish] PowerServiceImpl - createPower");
         return new PowerResponse(powerModel.getIdPower());
     }
+    @Override
+    public PowerDetailResponse getPowerById(UUID idPower) {
+        log.info("[start] PowerServiceImpl - getPowerById");
+        PowerModel powerModel = powerRepository.getPowerById(idPower);
+        log.info("[finish] PowerServiceImpl - getPowerById");
+        return new PowerDetailResponse(powerModel);
+        }
 }

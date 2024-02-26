@@ -1,6 +1,7 @@
 package br.com.superheros.superhiros.heros.application;
 
 import br.com.superheros.superhiros.heros.model.HerosModel;
+import br.com.superheros.superhiros.powers.dto.PowerDTO;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -9,22 +10,22 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Data
-public class HerosListDTO {
+public class HerosListResponse {
     private UUID idHeros;
     private String name;
     private String powerOfTheHeros;
     private LocalDateTime hourOfRegister;
 
-    public HerosListDTO(HerosModel herosModel) {
+    public HerosListResponse(HerosModel herosModel) {
         this.idHeros = herosModel.getIdHeros();
         this.name = herosModel.getName();
         this.powerOfTheHeros = herosModel.getPowerOfTheHeros();
         this.hourOfRegister = LocalDateTime.now();
     }
 
-    public static List<HerosListDTO> Converte(List<HerosModel> herosModels) {
+    public static List<HerosListResponse> Converte(List<HerosModel> herosModels) {
         return herosModels.stream()
-                .map(HerosListDTO::new)
+                .map(HerosListResponse::new)
                 .collect(Collectors.toList());
     }
 }

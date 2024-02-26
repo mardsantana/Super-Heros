@@ -6,6 +6,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Repository;
 
+import java.util.UUID;
+
 @Repository
 @Log4j2
 @RequiredArgsConstructor
@@ -17,5 +19,14 @@ public class PowerInfraRepository implements PowerRepository {
         powerSpringDataJPARepository.save(powerModel);
         log.info("[finish] PowerInfraRepository - savePower");
         return powerModel;
+    }
+
+    @Override
+    public PowerModel getPowerById(UUID idPower) {
+        log.info("[start] PowerInfraRepository - getPowerById");
+        var power = powerSpringDataJPARepository.findById(idPower)
+                        .orElseThrow(() -> new RuntimeException("Power Not Found!!"));
+        log.info("[finish] PowerInfraRepository - getPowerById");
+        return power;
     }
 }

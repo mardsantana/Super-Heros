@@ -1,7 +1,7 @@
 package br.com.superheros.superhiros.heros.service;
 
 import br.com.superheros.superhiros.heros.application.HerosDetailResponse;
-import br.com.superheros.superhiros.heros.application.HerosListDTO;
+import br.com.superheros.superhiros.heros.application.HerosListResponse;
 import br.com.superheros.superhiros.heros.application.HerosResponse;
 import br.com.superheros.superhiros.heros.dto.HerosDTO;
 import br.com.superheros.superhiros.heros.model.HerosModel;
@@ -33,11 +33,11 @@ public class HerosServiceImpl implements HerosService{
         return new HerosDetailResponse(herosModel);
     }
     @Override
-    public List<HerosListDTO> getAll() {
+    public List<HerosListResponse> getAll() {
         log.info("[start] HerosServiceImpl - getAll");
         List<HerosModel> herosModels = herosRepository.getAll();
         log.info("[finish] HerosServiceImpl - getAll");
-        return HerosListDTO.Converte(herosModels);
+        return HerosListResponse.Converte(herosModels);
     }
     @Override
     public void deleteHerosById(UUID idHeros) {

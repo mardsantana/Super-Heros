@@ -1,6 +1,10 @@
 package br.com.superheros.superhiros.powers.dto;
 
+import br.com.superheros.superhiros.heros.model.HerosModel;
+import br.com.superheros.superhiros.powers.model.PowerModel;
 import jakarta.persistence.Column;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
@@ -15,4 +19,20 @@ public class PowerDTO {
     private String weakness;
     @Column(table = "hour_of_register")
     private LocalDateTime hourOfRegister;
+
+    public PowerDTO() {
+    }
+
+    public PowerDTO(PowerDTO powerDTO) {
+        this.descriptionOfPower = powerDTO.getDescriptionOfPower();
+        this.weakness = powerDTO.getWeakness();
+        this.hourOfRegister = powerDTO.getHourOfRegister();
+    }
+
+    public PowerDTO(PowerModel powerModel) {
+        this.descriptionOfPower = powerModel.getDescriptionOfPower();
+        this.weakness = powerModel.getWeakness();
+        this.hourOfRegister = LocalDateTime.now();
+
+    }
 }

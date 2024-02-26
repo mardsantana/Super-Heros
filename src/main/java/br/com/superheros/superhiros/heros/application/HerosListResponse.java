@@ -1,7 +1,6 @@
 package br.com.superheros.superhiros.heros.application;
 
 import br.com.superheros.superhiros.heros.model.HerosModel;
-import br.com.superheros.superhiros.powers.dto.PowerDTO;
 import lombok.Data;
 
 import java.time.LocalDateTime;

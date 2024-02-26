@@ -2,16 +2,13 @@ package br.com.superheros.superhiros.heros.model;
 
 
 import br.com.superheros.superhiros.heros.dto.HerosDTO;
-import br.com.superheros.superhiros.powers.dto.PowerDTO;
 import br.com.superheros.superhiros.powers.model.PowerModel;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-import java.util.stream.Collectors;
 
 @Entity
 @NoArgsConstructor(access = AccessLevel.PUBLIC)

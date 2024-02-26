@@ -1,10 +1,8 @@
 package br.com.superheros.superhiros.powers.dto;
 
-import br.com.superheros.superhiros.heros.model.HerosModel;
 import br.com.superheros.superhiros.powers.model.PowerModel;
 import jakarta.persistence.Column;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 

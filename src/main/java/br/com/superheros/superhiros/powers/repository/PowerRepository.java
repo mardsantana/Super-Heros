@@ -7,4 +7,5 @@ import java.util.UUID;
 public interface PowerRepository {
     PowerModel savePower(PowerModel powerModel);
     PowerModel getPowerById(UUID idPower);
+    void deletePower(PowerModel powerModel);
 }

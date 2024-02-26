@@ -9,4 +9,5 @@ import java.util.UUID;
 public interface PowerService {
     PowerResponse createPower(UUID idHeros, PowerDTO powerDTO);
     PowerDetailResponse getPowerById(UUID idPower);
+    void deletePowerById(UUID idHeros, UUID idPower);
 }

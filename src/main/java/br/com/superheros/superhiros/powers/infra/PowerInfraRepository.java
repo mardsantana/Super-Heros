@@ -29,4 +29,10 @@ public class PowerInfraRepository implements PowerRepository {
         log.info("[finish] PowerInfraRepository - getPowerById");
         return power;
     }
+    @Override
+    public void deletePower(PowerModel powerModel) {
+        log.info("[start] PowerInfraRepository - deletePower");
+        powerSpringDataJPARepository.delete(powerModel);
+        log.info("[finish] PowerInfraRepository - deletePower");
+    }
 }

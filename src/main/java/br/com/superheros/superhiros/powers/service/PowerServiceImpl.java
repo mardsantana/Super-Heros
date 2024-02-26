@@ -35,4 +35,13 @@ public class PowerServiceImpl implements PowerService{
         log.info("[finish] PowerServiceImpl - getPowerById");
         return new PowerDetailResponse(powerModel);
         }
+
+    @Override
+    public void deletePowerById(UUID idHeros, UUID idPower) {
+        log.info("[start] PowerServiceImpl - deletePowerById");
+        herosService.getHerosById(idHeros);
+        PowerModel powerModel = powerRepository.getPowerById(idPower);
+        powerRepository.deletePower(powerModel);
+        log.info("[finish] PowerServiceImpl - deletePowerById");
+    }
 }

@@ -35,5 +35,13 @@ public class PowerController {
         log.info("[finish] PowerController - getPowerById");
         return powerStatus;
     }
+    @DeleteMapping(value = "/{idPower}")
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    void deletePowerById(@PathVariable UUID idHeros, @PathVariable UUID idPower){
+        log.info("[start] PowerController - deletePowerById");
+        log.info("[idHeros] {} - [idPower] {}", idHeros, idPower);
+        powerService.deletePowerById(idHeros, idPower);
+        log.info("[finish] PowerController - deletePowerById");
+    }
 
 }

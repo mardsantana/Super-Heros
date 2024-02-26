@@ -9,6 +9,7 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.util.Map;
 
 @Data
 public class PowerDTO {
@@ -19,6 +20,7 @@ public class PowerDTO {
     private String weakness;
     @Column(table = "hour_of_register")
     private LocalDateTime hourOfRegister;
+    private Map<String, Double> powerPercentages;
 
     public PowerDTO() {
     }
@@ -33,6 +35,7 @@ public class PowerDTO {
         this.descriptionOfPower = powerModel.getDescriptionOfPower();
         this.weakness = powerModel.getWeakness();
         this.hourOfRegister = LocalDateTime.now();
+        this.powerPercentages = powerModel.calculatePowerPorcentages();
 
     }
 }

@@ -52,4 +52,23 @@ public class PowerModel {
         this.descriptionOfPower = powerUpDate.getDescriptionOfPower();
         this.weakness = powerUpDate.getWeakness();
     }
+
+    public Map<String, Double> calculatePowerPorcentages() {
+        Map<String, Double> powerPorcentages = new HashMap<>();
+        double total = getTotalPower();
+
+        double powerPorcentage = (double) descriptionOfPower.length() / total * 100;
+        double weaknessPorcentage = (double) weakness.length() / total * 100;
+
+        powerPorcentages.put("Power", powerPorcentage);
+        powerPorcentages.put("Weakness", weaknessPorcentage);
+
+        return powerPorcentages;
+    }
+
+    private double getTotalPower() {
+        double total = descriptionOfPower.length() + weakness.length();
+        return total;
+    }
+
 }

@@ -1,9 +1,11 @@
 package br.com.superheros.superhiros.powers.infra;
 
+import br.com.superheros.superhiros.handler.APIException;
 import br.com.superheros.superhiros.powers.model.PowerModel;
 import br.com.superheros.superhiros.powers.repository.PowerRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 
 import java.util.UUID;
@@ -24,7 +26,7 @@ public class PowerInfraRepository implements PowerRepository {
     public PowerModel getPowerById(UUID idPower) {
         log.info("[start] PowerInfraRepository - getPowerById");
         var power = powerSpringDataJPARepository.findById(idPower)
-                        .orElseThrow(() -> new RuntimeException("Power Not Found!!"));
+                        .orElseThrow(() -> APIException.build(HttpStatus.NOT_FOUND,"Power Not Found!!"));
         log.info("[finish] PowerInfraRepository - getPowerById");
         return power;
     }

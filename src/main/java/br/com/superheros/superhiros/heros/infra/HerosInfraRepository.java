@@ -1,9 +1,11 @@
 package br.com.superheros.superhiros.heros.infra;
 
+import br.com.superheros.superhiros.handler.APIException;
 import br.com.superheros.superhiros.heros.model.HerosModel;
 import br.com.superheros.superhiros.heros.repository.HerosRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -25,7 +27,7 @@ public class HerosInfraRepository implements HerosRepository {
     public HerosModel getHerosById(UUID idHeros) {
         log.info("[start] HerosInfraRepository - getHerosById");
         HerosModel herosModel = herosSpringDataJPARepository.findById(idHeros)
-                        .orElseThrow(() -> new RuntimeException("Heros Not Found!!!"));
+                        .orElseThrow(() -> APIException.build(HttpStatus.NOT_FOUND,"Heros Not Found!!!"));
         log.info("[finish] HerosInfraRepository - getHerosById");
         return herosModel;
     }

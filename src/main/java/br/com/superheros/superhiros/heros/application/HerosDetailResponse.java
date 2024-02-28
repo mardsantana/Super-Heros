@@ -24,7 +24,9 @@ public class HerosDetailResponse {
         this.name = herosModel.getName();
         this.powerOfTheHeros = herosModel.getPowerOfTheHeros();
         this.hourOfRegister = LocalDateTime.now();
-        this.powers = herosModel.getPower().stream().map(PowerDTO::new).collect(Collectors.toList());
+        this.powers = herosModel.getPower()
+                .stream().map(PowerDTO::new)
+                .collect(Collectors.toList());
 
     }
 }

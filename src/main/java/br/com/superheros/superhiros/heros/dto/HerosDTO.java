@@ -1,6 +1,6 @@
-package br.com.superheros.superhiros.dto;
+package br.com.superheros.superhiros.heros.dto;
 
-import jakarta.persistence.Column;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
@@ -14,9 +14,6 @@ public class HerosDTO {
     @NotBlank
     @Column(table = "power_of_the_heros")
     private String powerOfTheHeros;
-    @NotBlank
-    @Column(table = "description_of_power", columnDefinition = "TEXT")
-    private String descriptionOfPower;
     @Column(table = "hour_of_register")
     private LocalDateTime hourOfRegister;
 }
